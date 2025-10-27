@@ -1,0 +1,41 @@
+<div class="dashboard-container">
+  <h2>Welcome, {{ username }}!</h2>
+  <p>You are logged in as: <strong>{{ role | titlecase }}</strong></p>
+
+  <!-- Student Panel -->
+  <div *ngIf="role === 'student'" class="student-panel-wrapper">
+    <!-- 🔔 Notification Bell -->
+    <div class="notification-bell" (click)="goToNotifications()">
+      🔔
+      <span class="badge">{{ notificationCount }}</span>
+    </div>
+
+    <div class="student-panel">
+      <div class="card">📘 Assignment</div>
+      <div class="card">🔬 Lab Record</div>
+      <div class="card">📊 Learning Record</div>
+      <div class="card">⚠️ Complain</div>
+      <div class="card">🎯 Marks</div>
+    </div>
+  </div>
+
+  <!-- Mentor Panel -->
+  <div *ngIf="role === 'mentor'" class="mentor-panel">
+    <h3>Mentor Access Panel</h3>
+    <div class="card">📘 View Assignments</div>
+    <div class="card">🔬 View Labs</div>
+    <div class="card">📊 View Learning Records</div>
+    <div class="card">💬 View Feedback</div>
+    <div class="card">📅 Schedule Sessions</div>
+  </div>
+
+  <!-- Parents Panel -->
+<div *ngIf="role === 'parents'" class="parents-panel">
+  <h3>Parents Dashboard</h3>
+<div class="card">📘 Assignment</div>
+    <div class="card">🔬 Lab Record</div>
+    <div class="card">📊 Learning Record</div>
+    <div class="card">⚠️ Complain</div>
+    <div class="card">🎯 Marks</div>
+</div>
+</div>
