@@ -1,0 +1,129 @@
+.login-container {
+  width: 500px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #b7657f 0%, #56a5de 100%);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 
+              0 0 0 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add subtle background pattern */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  z-index: 0;
+}
+
+.login-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+input {
+  display: block;
+  width: 85%;
+  padding: 15px 20px;
+  margin: 15px auto;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+button {
+  background: linear-gradient(135deg, #b0c588, #219c98);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(238, 90, 36, 0.3);
+  width: 90%;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #350d2f, #c2ad42);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(238, 90, 36, 0.4);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+/* Additional links styling */
+.login-links {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.login-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Animation for container */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-container {
+  animation: fadeInUp 0.6s ease-out;
+}
